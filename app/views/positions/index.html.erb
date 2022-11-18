@@ -1,0 +1,12 @@
+<h1>HR Portal</h1>
+
+<ul>
+  <% @positions.each do |position| %>
+    <li>
+      <h2> <%= link_to position.name, position %> </h2>
+      <h4> <%= position.description %> </h4>
+      <h4> <%= position.deadline %> </h4>
+      <h4> <%= position.available %> </h4>
+    </li>
+  <% end %>
+</ul>
