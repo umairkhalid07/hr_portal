@@ -4,6 +4,12 @@
   margin-left: 10px;
   text-decoration: none;
 }
+.link-alt {
+  font-size: 20px;
+  color: black;
+  margin-left: 10px;
+  text-decoration: none;
+}
 
 .error {
   padding: 2px;

@@ -44,10 +44,14 @@ gem "bootsnap", require: false
 
 gem 'jsbundling-rails'
 gem 'cssbundling-rails'
-gem "image_processing"
+gem "image_processing", ">= 1.2"
 gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap'
+gem "aws-sdk-s3", require: false
+gem "azure-storage-blob", require: false
+gem "google-cloud-storage", "~> 1.11", require: false
+
 
 
 # Use Sass to process CSS

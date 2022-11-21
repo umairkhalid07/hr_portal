@@ -5,6 +5,7 @@ Position.create(
   available: 5
 )
 Candidate.create(
+  status: 'applied',
   position_id: 1,
   name: 'Umair Khalid',
   email: 'umair@gmail.com',
@@ -14,6 +15,7 @@ Candidate.create(
   bio: 'I am an experienced joiner with well developed skills and experience in groundwork, concrete finishing and steel fixing and have worked in the construction industry since 1982. I am also a skilled labourer who has supported many different trades over the years. I have a full clean UK driving licence with entitlement of up to 7.5 tonne. I am keen to return to work after a period of training and personal development which has broadened my skills and experiences.'
 )
 Candidate.create(
+  status: 'applied',
   position_id: 1,
   name: 'Zubair Khalid',
   email: 'zubair@gmail.com',
@@ -23,6 +25,7 @@ Candidate.create(
   bio: 'I am an experienced joiner with well developed skills and experience in groundwork, concrete finishing and steel fixing and have worked in the construction industry since 1982. I am also a skilled labourer who has supported many different trades over the years. I have a full clean UK driving licence with entitlement of up to 7.5 tonne. I am keen to return to work after a period of training and personal development which has broadened my skills and experiences.'
 )
 Candidate.create(
+  status: 'applied',
   position_id: 1,
   name: 'Junaid Khalid',
   email: 'junaid@gmail.com',
@@ -41,6 +44,7 @@ Position.create(
   available: 3
 )
 Candidate.create(
+  status: 'applied',
   position_id: 2,
   name: 'Ibrahim Tariq',
   email: 'ibrahimtg@gmail.com',
@@ -50,6 +54,7 @@ Candidate.create(
   bio: 'I am an experienced joiner with well developed skills and experience in groundwork, concrete finishing and steel fixing and have worked in the construction industry since 1982. I am also a skilled labourer who has supported many different trades over the years. I have a full clean UK driving licence with entitlement of up to 7.5 tonne. I am keen to return to work after a period of training and personal development which has broadened my skills and experiences.'
 )
 Candidate.create(
+  status: 'applied',
   position_id: 2,
   name: 'Abdul Moeed',
   email: 'ams@gmail.com',
@@ -59,6 +64,7 @@ Candidate.create(
   bio: 'I am an experienced joiner with well developed skills and experience in groundwork, concrete finishing and steel fixing and have worked in the construction industry since 1982. I am also a skilled labourer who has supported many different trades over the years. I have a full clean UK driving licence with entitlement of up to 7.5 tonne. I am keen to return to work after a period of training and personal development which has broadened my skills and experiences.'
 )
 Candidate.create(
+  status: 'applied',
   position_id: 2,
   name: 'Mohsin Hameed',
   email: 'mohsin@gmail.com',
@@ -77,6 +83,7 @@ Position.create(
   available: 8
 )
 Candidate.create(
+  status: 'applied',
   position_id: 3,
   name: 'Osama Waqar',
   email: 'osama@gmail.com',
@@ -86,6 +93,7 @@ Candidate.create(
   bio: 'I am an experienced joiner with well developed skills and experience in groundwork, concrete finishing and steel fixing and have worked in the construction industry since 1982. I am also a skilled labourer who has supported many different trades over the years. I have a full clean UK driving licence with entitlement of up to 7.5 tonne. I am keen to return to work after a period of training and personal development which has broadened my skills and experiences.'
 )
 Candidate.create(
+  status: 'applied',
   position_id: 3,
   name: 'Moosa Kazim',
   email: 'moosa@gmail.com',
@@ -95,6 +103,7 @@ Candidate.create(
   bio: 'I am an experienced joiner with well developed skills and experience in groundwork, concrete finishing and steel fixing and have worked in the construction industry since 1982. I am also a skilled labourer who has supported many different trades over the years. I have a full clean UK driving licence with entitlement of up to 7.5 tonne. I am keen to return to work after a period of training and personal development which has broadened my skills and experiences.'
 )
 Candidate.create(
+  status: 'applied',
   position_id: 3,
   name: 'Afaq Tahir',
   email: 'afaqt@gmail.com',
@@ -113,6 +122,7 @@ Position.create(
   available: 10
 )
 Candidate.create(
+  status: 'applied',
   position_id: 4,
   name: 'Meer Balaj',
   email: 'meerbalajkht@gmail.com',
@@ -122,6 +132,7 @@ Candidate.create(
   bio: 'I am an experienced joiner with well developed skills and experience in groundwork, concrete finishing and steel fixing and have worked in the construction industry since 1982. I am also a skilled labourer who has supported many different trades over the years. I have a full clean UK driving licence with entitlement of up to 7.5 tonne. I am keen to return to work after a period of training and personal development which has broadened my skills and experiences.'
 )
 Candidate.create(
+  status: 'applied',
   position_id: 4,
   name: 'Gullraiz Nadeem',
   email: 'gullraizGN@gmail.com',
@@ -131,6 +142,7 @@ Candidate.create(
   bio: 'I am an experienced joiner with well developed skills and experience in groundwork, concrete finishing and steel fixing and have worked in the construction industry since 1982. I am also a skilled labourer who has supported many different trades over the years. I have a full clean UK driving licence with entitlement of up to 7.5 tonne. I am keen to return to work after a period of training and personal development which has broadened my skills and experiences.'
 )
 Candidate.create(
+  status: 'applied',
   position_id: 4,
   name: 'Abdullah Ch',
   email: 'abch@gmail.com',
@@ -149,6 +161,7 @@ Position.create(
   available: 2
 )
 Candidate.create(
+  status: 'applied',
   position_id: 5,
   name: 'Mubeen Amir',
   email: 'mubeen@gmail.com',
@@ -158,6 +171,7 @@ Candidate.create(
   bio: 'I am an experienced joiner with well developed skills and experience in groundwork, concrete finishing and steel fixing and have worked in the construction industry since 1982. I am also a skilled labourer who has supported many different trades over the years. I have a full clean UK driving licence with entitlement of up to 7.5 tonne. I am keen to return to work after a period of training and personal development which has broadened my skills and experiences.'
 )
 Candidate.create(
+  status: 'applied',
   position_id: 5,
   name: 'Ghalib Ahmed',
   email: 'ghalib@gmail.com',
@@ -167,6 +181,7 @@ Candidate.create(
   bio: 'I am an experienced joiner with well developed skills and experience in groundwork, concrete finishing and steel fixing and have worked in the construction industry since 1982. I am also a skilled labourer who has supported many different trades over the years. I have a full clean UK driving licence with entitlement of up to 7.5 tonne. I am keen to return to work after a period of training and personal development which has broadened my skills and experiences.'
 )
 Candidate.create(
+  status: 'applied',
   position_id: 5,
   name: 'Zarrar Lohdi',
   email: 'zaru@gmail.com',

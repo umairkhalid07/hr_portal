@@ -1,13 +1,6 @@
 <%= form_with model: @candidate do |form| %>
 
   <div class="px-5 py-2 mx-5">
-    <div class="my-1">
-      <div class="form-label fw-bold"><%= form.label :position %><br></div>
-      <%= form.select :position_id, Position.all.collect { |position| [position.name, position.id] }, :disabled => true %>
-      <% @candidate.errors[:author_id].each do |message| %>
-        <div class="error"><%= message %></div>
-      <% end %>
-    </div>
 
     <div class="my-1">
       <div class="form-label fw-bold"><%= form.label :name %><br></div>
@@ -53,6 +46,38 @@
       <div class="form-label fw-bold"><%= form.label :bio %><br></div>
       <%= form.text_area :bio, size: "100x5" %><br>
       <% @candidate.errors.full_messages_for(:bio).each do |message| %>
+        <div class="error"><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="my-1">
+      <div class="form-label fw-bold"><%= form.label :picture %><br></div>
+      <div><%= form.file_field :picture %><br></div>
+      <% @candidate.errors.full_messages_for(:picture).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="my-1">
+      <div class="form-label fw-bold"><%= form.label :cv %><br></div>
+      <div><%= form.file_field :cv %><br></div>
+      <% @candidate.errors.full_messages_for(:cv).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="my-1">
+      <div class="form-label fw-bold"><%= form.label :docs %><br></div>
+      <div><%= form.file_field :docs, :multiple => true %><br></div>
+      <% @candidate.errors.full_messages_for(:docs).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="my-1">
+      <div class="form-label fw-bold"><%= form.label :status %><br></div>
+      <%= form.select :status, ['applied', 'test', 'interview1', 'interview2', 'interview3', 'hired'], selected: 'applied' %>
+      <% @candidate.errors.full_messages_for(:status).each do |message| %>
         <div class="error"><%= message %></div>
       <% end %>
     </div>

@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag "main", "data-turbo-track": "reload" %>
+
+<h1 class="display-1 text-center bg-primary py-1 m-0">HR Portal</h1>
+<div class="mb-5"><%= render "positions/nav1" %></div>
+<h1 class="display-5 text-center m-3">Candidate Details</h1>
+
+<div class="mx-auto">
+  <div class="card mx-5 my-3 p-2">
+    <div class="card-body">
+      <h2 class="card-title"><%= @candidate.name %></h2>
+      <p class="card-text"><strong>Email: </strong><%= @candidate.email %></p>
+      <p class="card-text"><strong>Phone Number: </strong><%= @candidate.phone %></p>
+      <p class="card-text"><strong>University: </strong><%= @candidate.university %></p>
+      <p class="card-text"><strong>GPA: </strong><%= @candidate.gpa %></p>
+      <p class="card-text"><strong>Bio: </strong><%= @candidate.bio %></p>
+      <p class="card-text"><strong>Status: </strong><%= @candidate.status %></p>
+      <br>
+      <%= link_to "Edit Candidate", edit_candidate_path(@candidate), :class => "link-alt" %>
+      <%= link_to "Delete Candidate", @candidate, :class => "link-alt", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </div>
+  </div>
+</div>

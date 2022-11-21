@@ -6,7 +6,7 @@ class Candidate < ApplicationRecord
   has_one_attached :cv
   has_many_attached :docs
 
-  validates :name, :email, :phone, :university, :gpa, :bio, presence: true
+  validates :name, :email, :phone, :university, :gpa, :bio, :status, presence: true
   validates :phone, :gpa, numericality: true
   validates :email, :phone, uniqueness: true
 end

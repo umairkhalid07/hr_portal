@@ -13,6 +13,7 @@ class PositionsController < ApplicationController
 
   def create
     @position = Position.new(position_params)
+    session[:position_id] = @position.id
     @position.logo.attach(position_params[:logo])
     if @position.save
       redirect_to @position

@@ -1,5 +1,5 @@
 class Position < ApplicationRecord
-  has_many :candidates
+  has_many :candidates, dependent: :destroy
   has_one_attached :logo
   default_scope { order(deadline: :asc) }
 

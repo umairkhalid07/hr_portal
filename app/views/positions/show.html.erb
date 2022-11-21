@@ -15,14 +15,15 @@
     <% @position.candidates.each do |candidate| %>
       <div class="card mx-5 my-3 p-2" style="display: inline-block; width: 40%;">
         <div class="card-body">
-          <h5 class="card-title"><%= candidate.name %></h5>
+          <h5 class="card-title"><%= link_to candidate.name, candidate %></h5>
           <p class="card-text"><strong>Email: </strong><%= candidate.email %></p>
           <p class="card-text"><strong>Phone Number: </strong><%= candidate.phone %></p>
           <p class="card-text"><strong>University: </strong><%= candidate.university %></p>
           <p class="card-text"><strong>GPA: </strong><%= candidate.gpa %></p>
           <p class="card-text"><strong>Bio: </strong><%= candidate.bio %></p>
-          <%= link_to "Edit Candidate", edit_candidate_path(position) %>
-          <%= link_to "Delete Candidate", :controller=>"candidates", :action=>"destroy", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          <p class="card-text"><strong>Status: </strong><%= candidate.status %></p>
+          <%= link_to "Edit Candidate", edit_candidate_path(candidate), :class => "link-alt" %>
+          <%= link_to "Delete Candidate", candidate, :class => "link-alt", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         </div>
       </div>
     <% end %>
