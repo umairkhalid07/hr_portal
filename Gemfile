@@ -26,8 +26,6 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-gem 'bootstrap'
-gem 'bootstrap-sass'
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
@@ -46,6 +44,11 @@ gem "bootsnap", require: false
 
 gem 'jsbundling-rails'
 gem 'cssbundling-rails'
+gem "image_processing"
+gem 'sass-rails'
+gem 'bootstrap-sass'
+gem 'bootstrap'
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"

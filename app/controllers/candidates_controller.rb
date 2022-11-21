@@ -1,4 +1,9 @@
 class CandidatesController < ApplicationController
+
+  def index
+    @candidates = Candidate.all
+  end
+
   def create
     @position = Position.find(params[:position_id])
     @candidate = @position.candidates.create(candidate_params)
@@ -40,6 +45,6 @@ class CandidatesController < ApplicationController
 
   private
   def candidate_params
-    params.require(:candidate).permit(:name, :email, :phone, :university, :gpa, :bio)
+    params.require(:candidate).permit(:name, :email, :phone, :university, :gpa, :bio, :status)
   end
 end
