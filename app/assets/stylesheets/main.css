@@ -4,3 +4,13 @@
   margin-left: 10px;
   text-decoration: none;
 }
+
+.error {
+  padding: 2px;
+  color: red;
+}
+
+.btn {
+  background-color: blue;
+  color: white;
+}

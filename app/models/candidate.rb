@@ -1,8 +1,7 @@
 class Candidate < ApplicationRecord
   include Hiring
 
-  belongs_to :position
-
+  belongs_to :position, dependent: :destroy
   has_one_attached :picture
   has_one_attached :cv
   has_many_attached :docs

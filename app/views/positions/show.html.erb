@@ -7,13 +7,10 @@
   <p class="lead"> <strong>Description: </strong><%= @position.description %></p>
   <p class="lead"> <strong>Deadline to Apply: </strong><%= @position.deadline.strftime("%d/%m/%Y") %></p>
   <p class="lead"> <strong>Available Openings: </strong><%= @position.available %></p>
-</div>
-
-<hr>
+</div><hr>
 
 <div class="mx-5">
-  <h3>Candidates</h3>
-  <hr>
+  <h3>Candidates</h3><hr>
   <div class="mx-auto">
     <% @position.candidates.each do |candidate| %>
       <div class="card mx-5 my-3 p-2" style="display: inline-block; width: 40%;">
@@ -24,7 +21,8 @@
           <p class="card-text"><strong>University: </strong><%= candidate.university %></p>
           <p class="card-text"><strong>GPA: </strong><%= candidate.gpa %></p>
           <p class="card-text"><strong>Bio: </strong><%= candidate.bio %></p>
-          <%= link_to "Delete Candidate", [candidate.position, candidate], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          <%= link_to "Edit Candidate", edit_candidate_path(position) %>
+          <%= link_to "Delete Candidate", :controller=>"candidates", :action=>"destroy", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         </div>
       </div>
     <% end %>

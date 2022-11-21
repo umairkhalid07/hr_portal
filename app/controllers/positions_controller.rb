@@ -13,6 +13,7 @@ class PositionsController < ApplicationController
 
   def create
     @position = Position.new(position_params)
+    @position.logo.attach(position_params[:logo])
     if @position.save
       redirect_to @position
     else
@@ -26,7 +27,7 @@ class PositionsController < ApplicationController
 
   def update
     @position = Position.find(params[:id])
-
+    @position.logo.attach(params[:logo])
     if @position.update(position_params)
       redirect_to @position
     else
@@ -39,7 +40,6 @@ class PositionsController < ApplicationController
     @position.destroy
     redirect_to positions_path, status: :see_other
   end
-
 
   private
   def position_params

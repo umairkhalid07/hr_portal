@@ -1,0 +1,64 @@
+<%= form_with model: @candidate do |form| %>
+
+  <div class="px-5 py-2 mx-5">
+    <div class="my-1">
+      <div class="form-label fw-bold"><%= form.label :position %><br></div>
+      <%= form.select :position_id, Position.all.collect { |position| [position.name, position.id] }, :disabled => true %>
+      <% @candidate.errors[:author_id].each do |message| %>
+        <div class="error"><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="my-1">
+      <div class="form-label fw-bold"><%= form.label :name %><br></div>
+      <%= form.text_field :name %>
+      <% @candidate.errors.full_messages_for(:name).each do |message| %>
+        <div class="error"><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="my-1">
+      <div class="form-label fw-bold"><%= form.label :email %><br></div>
+      <%= form.text_field :email %><br>
+      <% @candidate.errors.full_messages_for(:email).each do |message| %>
+        <div class="error"><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="my-1">
+      <div class="form-label fw-bold"><%= form.label :phone %><br></div>
+      <%= form.text_field :phone %><br>
+      <% @candidate.errors.full_messages_for(:phone).each do |message| %>
+        <div class="error"><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="my-1">
+      <div class="form-label fw-bold"><%= form.label :university %><br></div>
+      <%= form.text_field :university %><br>
+      <% @candidate.errors.full_messages_for(:university).each do |message| %>
+        <div class="error"><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="my-1">
+      <div class="form-label fw-bold"><%= form.label :gpa %><br></div>
+      <%= form.text_field :gpa %><br>
+      <% @candidate.errors.full_messages_for(:gpa).each do |message| %>
+        <div class="error"><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="my-1">
+      <div class="form-label fw-bold"><%= form.label :bio %><br></div>
+      <%= form.text_area :bio, size: "100x5" %><br>
+      <% @candidate.errors.full_messages_for(:bio).each do |message| %>
+        <div class="error"><%= message %></div>
+      <% end %>
+    </div>
+
+    <button class="my-3 btn btn-primary">
+      <%= form.submit :class => "btn" %>
+    </button>
+<% end %>
+</div>
