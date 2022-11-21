@@ -44,12 +44,14 @@
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.13.0, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap (v5.2.2, RVM: ruby-3.1.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.4.1, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.3.24, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v3.38.0, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="childprocess (v4.1.0, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.10, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, RVM: ruby-3.1.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cssbundling-rails (v1.1.1, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="debug (v1.6.3, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.11.0, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.8.1, RVM: ruby-3.1.0) [gem]" level="application" />
@@ -60,6 +62,7 @@
     <orderEntry type="library" scope="PROVIDED" name="io-console (v0.5.11, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="irb (v1.4.3, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.5, RVM: ruby-3.1.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jsbundling-rails (v1.0.3, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.19.0, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.7.1, RVM: ruby-3.1.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.2, RVM: ruby-3.1.0) [gem]" level="application" />
@@ -264,6 +267,22 @@
               <RakeTaskImpl description="Lookup nested dependencies for TEMPLATE (like messages/show or comments/_comment.html)" fullCommand="cache_digests:nested_dependencies" id="nested_dependencies" />
             </subtasks>
           </RakeTaskImpl>
+          <RakeTaskImpl id="css">
+            <subtasks>
+              <RakeTaskImpl description="Build your CSS bundle" fullCommand="css:build" id="build" />
+              <RakeTaskImpl description="Remove CSS builds" fullCommand="css:clobber" id="clobber" />
+              <RakeTaskImpl id="install">
+                <subtasks>
+                  <RakeTaskImpl description="Install Bootstrap" fullCommand="css:install:bootstrap" id="bootstrap" />
+                  <RakeTaskImpl description="Install Bulma" fullCommand="css:install:bulma" id="bulma" />
+                  <RakeTaskImpl description="Install PostCSS" fullCommand="css:install:postcss" id="postcss" />
+                  <RakeTaskImpl description="Install Sass" fullCommand="css:install:sass" id="sass" />
+                  <RakeTaskImpl description="Install shared elements for all bundlers" fullCommand="css:install:shared" id="shared" />
+                  <RakeTaskImpl description="Install Tailwind" fullCommand="css:install:tailwind" id="tailwind" />
+                </subtasks>
+              </RakeTaskImpl>
+            </subtasks>
+          </RakeTaskImpl>
           <RakeTaskImpl id="db">
             <subtasks>
               <RakeTaskImpl description="Creates the database from DATABASE_URL or config/database.yml for the current RAILS_ENV (use db:create:all to create all databases in the config). Without RAILS_ENV or when RAILS_ENV is development, it defaults to creating the development and test databases, except when DATABASE_URL is present" fullCommand="db:create" id="create" />
@@ -365,6 +384,20 @@
           <RakeTaskImpl id="importmap">
             <subtasks>
               <RakeTaskImpl description="Setup Importmap for the app" fullCommand="importmap:install" id="install" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="javascript">
+            <subtasks>
+              <RakeTaskImpl description="Build your JavaScript bundle" fullCommand="javascript:build" id="build" />
+              <RakeTaskImpl description="Remove JavaScript builds" fullCommand="javascript:clobber" id="clobber" />
+              <RakeTaskImpl id="install">
+                <subtasks>
+                  <RakeTaskImpl description="Install esbuild" fullCommand="javascript:install:esbuild" id="esbuild" />
+                  <RakeTaskImpl description="Install rollup.js" fullCommand="javascript:install:rollup" id="rollup" />
+                  <RakeTaskImpl description="Install shared elements for all bundlers" fullCommand="javascript:install:shared" id="shared" />
+                  <RakeTaskImpl description="Install Webpack" fullCommand="javascript:install:webpack" id="webpack" />
+                </subtasks>
+              </RakeTaskImpl>
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl id="log">

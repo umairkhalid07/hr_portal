@@ -1,12 +1,24 @@
-<h1>HR Portal</h1>
+<%= stylesheet_link_tag "main", "data-turbo-track": "reload" %>
 
-<ul>
+<h1 class="display-1 text-center bg-primary py-2 mb-5">HR Portal</h1>
+<h1 class="display-5 text-center mb-5">Current Job Positions</h1>
+
+<div class="mx-auto">
   <% @positions.each do |position| %>
-    <li>
-      <h2> <%= link_to position.name, position %> </h2>
-      <h4> <%= position.description %> </h4>
-      <h4> <%= position.deadline %> </h4>
-      <h4> <%= position.available %> </h4>
-    </li>
+    <div class="card mx-5 my-3 p-2" style="display: inline-block; width: 40%;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to position.name, position %></h5>
+        <p class="card-text"><%= position.description %></p>
+        <p class="card-text fw-bold">Deadline: <%= position.deadline %></p>
+        <p class="card-subtitle fw-bold">Positions: <%= position.available %></p>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
+
+<div class="text-center m-5">
+  <h3><%= link_to "New Position", new_position_path %></h3>
+</div>
+
+
+

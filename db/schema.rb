@@ -18,8 +18,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_18_103935) do
     t.text "bio"
     t.string "university"
     t.float "gpa"
+    t.integer "position_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["position_id"], name: "index_candidates_on_position_id"
   end
 
   create_table "positions", force: :cascade do |t|
@@ -31,4 +33,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_18_103935) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "candidates", "positions"
 end

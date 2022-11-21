@@ -1,0 +1,12 @@
+<strong>Candidate Details</strong>
+<p> <%= candidate.name %> </p>
+<p> <%= candidate.email %> </p>
+<p> <%= candidate.phone %> </p>
+<p> <%= candidate.university %> </p>
+<p> <%= candidate.gpa %> </p>
+<p> <%= candidate.bio %> </p>
+
+<ul>
+<!--  <li><%#= link_to "Edit Candidate Details", edit_position_candidate_path(@candidate) %></li>-->
+  <%= link_to "Delete Candidate", [candidate.position, candidate], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+</ul>

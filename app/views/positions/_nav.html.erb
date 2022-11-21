@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link"><%= link_to "Home", root_path, :class => "link"%></a>
+          <span>  |  </span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><%= link_to "Edit Position Details", edit_position_path(@position), :class => "link" %></a>
+          <span>  |  </span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><%= link_to "Delete Position", position_path(@position), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, :class => "link" %></a>
+          <span>  |  </span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><%= link_to "Create New Candidate",  new_position_candidate_path(@position), :class => "link" %></a>
+          <span>  |  </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,6 +1,31 @@
-<div>
-  <h1> Title: <%= @position.name %></h1>
-  <h4> Description: <%= @position.description %></h4>
-  <h4> Deadline to Apply: <%= @position.deadline %></h4>
-  <h4> Available Openings: <%= @position.available %></h4>
+<%= stylesheet_link_tag "main", "data-turbo-track": "reload" %>
+
+<h1 class="display-1 text-center bg-primary py-2 no-gutter m-0">HR Portal</h1>
+<div class="mb-5"><%= render "positions/nav" %></div>
+<div class="mx-5">
+  <h1> <%= @position.name %></h1>
+  <p class="lead"> <strong>Description: </strong><%= @position.description %></p>
+  <p class="lead"> <strong>Deadline to Apply: </strong><%= @position.deadline %></p>
+  <p class="lead"> <strong>Available Openings: </strong><%= @position.available %></p>
+</div>
+
+<hr>
+
+<div class="mx-5">
+  <h3>Candidates</h3>
+  <hr>
+  <div class="mx-auto">
+    <% @position.candidates.each do |candidate| %>
+      <div class="card mx-5 my-3 p-2" style="display: inline-block; width: 40%;">
+        <div class="card-body">
+          <h5 class="card-title"><%= candidate.name %></h5>
+          <p class="card-text"><strong>Email: </strong><%= candidate.email %></p>
+          <p class="card-text"><strong>Phone Number: </strong><%= candidate.phone %></p>
+          <p class="card-text"><strong>University: </strong><%= candidate.university %></p>
+          <p class="card-text"><strong>GPA: </strong><%= candidate.gpa %></p>
+          <p class="card-text"><strong>Bio: </strong><%= candidate.bio %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

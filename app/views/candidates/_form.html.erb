@@ -1,0 +1,51 @@
+<%= form_with model: [ @position, @position.candidates.build ] do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% candidate.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %><br>
+    <% candidate.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :phone %><br>
+    <%= form.text_field :phone %><br>
+    <% candidate.errors.full_messages_for(:phone).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :university %><br>
+    <%= form.text_field :university %><br>
+    <% candidate.errors.full_messages_for(:university).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :gpa %><br>
+    <%= form.text_field :gpa %><br>
+    <% candidate.errors.full_messages_for(:gpa).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :bio %><br>
+    <%= form.text_field :bio %><br>
+    <% candidate.errors.full_messages_for(:bio).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <%= form.submit %>
+<% end %>

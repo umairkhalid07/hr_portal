@@ -7,6 +7,7 @@ class CreateCandidates < ActiveRecord::Migration[7.0]
       t.text :bio
       t.string :university
       t.float :gpa
+      t.references :position, null: false, foreign_key: true
 
       t.timestamps
     end
