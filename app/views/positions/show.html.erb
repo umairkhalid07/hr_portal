@@ -3,6 +3,7 @@
 <h1 class="display-1 text-center bg-primary py-2 no-gutter m-0">HR Portal</h1>
 <div class="mb-5"><%= render "positions/nav2" %></div>
 <div class="mx-5">
+  <%= image_tag @position.logo, width: "20%", height: "10%" %>
   <h1> <%= @position.name %></h1>
   <p class="lead"> <strong>Description: </strong><%= @position.description %></p>
   <p class="lead"> <strong>Deadline to Apply: </strong><%= @position.deadline.strftime("%d/%m/%Y") %></p>

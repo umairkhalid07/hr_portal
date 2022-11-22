@@ -7,13 +7,46 @@
 <div class="mx-auto">
   <div class="card mx-5 my-3 p-2">
     <div class="card-body">
-      <h2 class="card-title"><%= @candidate.name %></h2>
-      <p class="card-text"><strong>Email: </strong><%= @candidate.email %></p>
-      <p class="card-text"><strong>Phone Number: </strong><%= @candidate.phone %></p>
-      <p class="card-text"><strong>University: </strong><%= @candidate.university %></p>
-      <p class="card-text"><strong>GPA: </strong><%= @candidate.gpa %></p>
-      <p class="card-text"><strong>Bio: </strong><%= @candidate.bio %></p>
-      <p class="card-text"><strong>Status: </strong><%= @candidate.status %></p>
+
+      <% if @candidate.picture.attached? %>
+        <% puts "==================== PICTURE IS ATTACHED ====================" %>
+        <div class="text-center"><%= image_tag @candidate.picture, width: "10%", height: "10%" %></div>
+      <% end %>
+
+      <h1 class="card-title text-center"><%= @candidate.name %></h1>
+
+      <div class="card text-center p-2 candidate-info">
+        <div class="card-body">
+          <h3 class="card-text"><strong>Email: </strong><%= @candidate.email %></h3>
+          <h3 class="card-text"><strong>Phone Number: </strong><%= @candidate.phone %></h3>
+          <h3 class="card-text"><strong>University: </strong><%= @candidate.university %></h3>
+          <h3 class="card-text"><strong>GPA: </strong><%= @candidate.gpa %></h3>
+          <h3 class="card-text"><strong>Bio: </strong><%= @candidate.bio %></h3>
+          <h3 class="card-text"><strong>Status: </strong><%= @candidate.status %></h3>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <% if @candidate.picture.attached? %>
+              <% puts "==================== CV IS ATTACHED ====================" %>
+              <div class="text-center"><%= image_tag url_for(@candidate.cv), width: "50%", height: "30%" %></div>
+            <% end %>
+          </div>
+          <div class="col-9">
+            <% if @candidate.docs.attached? %>
+              <% puts "==================== DOCS ARE ATTACHED ====================" %>
+              <div>
+                <% @candidate.docs.each do |doc| %>
+                  <%= image_tag doc, :class => "doc" %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
       <br>
       <%= link_to "Edit Candidate", edit_candidate_path(@candidate), :class => "link-alt" %>
       <%= link_to "Delete Candidate", @candidate, :class => "link-alt", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
