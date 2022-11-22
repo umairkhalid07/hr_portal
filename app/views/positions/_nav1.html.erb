@@ -1,18 +1,18 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark">
+<nav class="navbar navbar-expand navbar-dark bg-dark text-center">
   <div class="container-fluid">
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav me-auto">
+    <div class="collapse navbar-collapse center-nav p-2">
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link"><%= link_to "Home", root_path, :class => "link"%></a>
-          <span>  |  </span>
+          <a class="nav-link nav-item"><%= link_to "Home", root_path, :class => "link"%></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"><%= link_to "New Position", new_position_path, :class => "link" %></a>
-          <span>  |  </span>
+          <a class="nav-link nav-item"><%= link_to "New Position", new_position_path, :class => "link" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"><%= link_to "New Candidate",  new_candidate_path, :class => "link" %></a>
-          <span>  |  </span>
+          <a class="nav-link nav-item"><%= link_to "New Candidate",  new_candidate_path, :class => "link" %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-item"><%= link_to "Sign Out", destroy_user_session_path, 'data-turbo-method': :delete, :class => "link" %></a>
         </li>
       </ul>
     </div>

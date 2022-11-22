@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root "positions#index"
+
+  devise_for :users
+  root "positions#home"
 
   resources :positions
   resources :candidates

@@ -1,4 +1,8 @@
 class PositionsController < ApplicationController
+  def home
+
+  end
+
   def index
     @positions = Position.all
   end

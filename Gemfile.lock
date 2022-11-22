@@ -94,6 +94,7 @@ GEM
       faraday_middleware (~> 1.0, >= 1.0.0.rc1)
       net-http-persistent (~> 4.0)
       nokogiri (~> 1, >= 1.10.8)
+    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
@@ -124,6 +125,12 @@ GEM
       irb (>= 1.3.6)
       reline (>= 0.3.1)
     declarative (0.0.20)
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     digest-crc (0.6.4)
       rake (>= 12.0.0, < 14.0.0)
     erubi (1.11.0)
@@ -237,6 +244,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     os (1.1.4)
     popper_js (2.11.6)
     public_suffix (5.0.0)
@@ -281,6 +289,9 @@ GEM
       declarative (< 0.1.0)
       trailblazer-option (>= 0.1.1, < 0.2.0)
       uber (< 0.2.0)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     retriable (3.1.2)
     rexml (3.2.5)
     ruby-vips (2.1.4)
@@ -328,6 +339,8 @@ GEM
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -358,6 +371,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  devise
   google-cloud-storage (~> 1.11)
   image_processing (>= 1.2)
   importmap-rails
