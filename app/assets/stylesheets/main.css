@@ -21,3 +21,6 @@
 .candidate-info{
   border: none;
 }
+.add-border {
+  border: 2px solid darkgray;
+}

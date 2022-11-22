@@ -26,12 +26,13 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container add-border p-3">
         <div class="row">
           <div class="col-3">
             <% if @candidate.picture.attached? %>
               <% puts "==================== CV IS ATTACHED ====================" %>
-              <div class="text-center"><%= image_tag url_for(@candidate.cv), width: "50%", height: "30%" %></div>
+              <%= image_tag @candidate.cv, :class => "add-border" %>
+              <%= link_to 'View CV', rails_blob_path(@candidate.cv, disposition: "preview", :class => "link-alt") %>
             <% end %>
           </div>
           <div class="col-9">
@@ -39,7 +40,8 @@
               <% puts "==================== DOCS ARE ATTACHED ====================" %>
               <div>
                 <% @candidate.docs.each do |doc| %>
-                  <%= image_tag doc, :class => "doc" %>
+                  <%= image_tag doc, :class => "add-border" %>
+                  <%= link_to 'View Docs', rails_blob_path(doc, disposition: "preview", :class => "link-alt") %>
                 <% end %>
               </div>
             <% end %>
