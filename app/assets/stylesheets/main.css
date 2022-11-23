@@ -20,7 +20,7 @@
   font-style: italic;
 }
 .btn {
-  background-color: blue;
+  background-color: purple;
   color: white;
   padding: 3px 8px;
 }
@@ -28,7 +28,7 @@
   border: none;
 }
 .add-border {
-  border: 2px solid darkgray;
+  border: 1px solid lightgray;
 }
 .center-nav{
   justify-content: space-evenly;

@@ -1,21 +1,10 @@
-<%= form_with model: candidate, data: { turbo: false } do |form| %>
+<%= form_with model: [ position, candidate ], data: { turbo: false } do |form| %>
 
   <div class="px-5 py-2 mx-5">
-
-    <% unless candidate.persisted? %>
-      <div class="my-1">
-        <div class="form-label fw-bold"><%= form.label :position %></div>
-        <%= form.select :position_id, Position.all.collect { |position| [position.name, position.id] } %>
-        <% candidate.errors[:author_id].each do |message| %>
-          <div class="error"><%= message %></div>
-        <% end %>
-      </div>
-    <% end %>
-
     <div class="my-1">
       <div class="form-label fw-bold"><%= form.label :name %></div>
       <%= form.text_field :name, required: true %>
-      <% candidate.errors.full_messages_for(:name).each do |message| %>
+      <% form.object.errors.full_messages_for(:name).each do |message| %>
         <div class="error"><%= message %></div>
       <% end %>
     </div>
@@ -23,7 +12,7 @@
     <div class="my-1">
       <div class="form-label fw-bold"><%= form.label :email %></div>
       <%= form.text_field :email, required: true %>
-      <% candidate.errors.full_messages_for(:email).each do |message| %>
+      <% form.object.errors.full_messages_for(:email).each do |message| %>
         <div class="error"><%= message %></div>
       <% end %>
     </div>
@@ -31,7 +20,7 @@
     <div class="my-1">
       <div class="form-label fw-bold"><%= form.label :phone_number %></div>
       <%= form.text_field :phone_number, required: true %>
-      <% candidate.errors.full_messages_for(:phone_number).each do |message| %>
+      <% form.object.errors.full_messages_for(:phone_number).each do |message| %>
         <div class="error"><%= message %></div>
     <% end %>
     </div>
@@ -39,7 +28,7 @@
     <div class="my-1">
       <div class="form-label fw-bold"><%= form.label :university %></div>
       <%= form.text_field :university, required: true %>
-      <% candidate.errors.full_messages_for(:university).each do |message| %>
+      <% form.object.errors.full_messages_for(:university).each do |message| %>
         <div class="error"><%= message %></div>
       <% end %>
     </div>
@@ -47,7 +36,7 @@
     <div class="my-1">
       <div class="form-label fw-bold"><%= form.label :gpa %></div>
       <%= form.text_field :gpa, required: true %>
-      <% candidate.errors.full_messages_for(:gpa).each do |message| %>
+      <% form.object.errors.full_messages_for(:gpa).each do |message| %>
         <div class="error"><%= message %></div>
       <% end %>
     </div>
@@ -55,7 +44,7 @@
     <div class="my-1">
       <div class="form-label fw-bold"><%= form.label :bio %></div>
       <%= form.text_area :bio, size: "100x5", required: true %>
-      <% candidate.errors.full_messages_for(:bio).each do |message| %>
+      <% form.object.errors.full_messages_for(:bio).each do |message| %>
         <div class="error"><%= message %></div>
       <% end %>
     </div>
@@ -63,7 +52,7 @@
     <div class="my-1">
       <div class="form-label fw-bold"><%= form.label :picture %></div>
       <%= form.file_field :picture, required: true %>
-      <% candidate.errors.full_messages_for(:picture).each do |message| %>
+      <% form.object.errors.full_messages_for(:picture).each do |message| %>
         <div class="error"><%= message %></div>
       <% end %>
     </div>
@@ -71,7 +60,7 @@
     <div class="my-1">
       <div class="form-label fw-bold"><%= form.label :cv %></div>
       <div><%= form.file_field :cv, required: true %></div>
-      <% candidate.errors.full_messages_for(:cv).each do |message| %>
+      <% form.object.errors.full_messages_for(:cv).each do |message| %>
         <div class="error"><%= message %></div>
       <% end %>
     </div>
@@ -79,7 +68,7 @@
     <div class="my-1">
       <div class="form-label fw-bold"><%= form.label :docs %></div>
       <div><%= form.file_field :docs, :multiple => true, required: true %></div>
-      <% candidate.errors.full_messages_for(:docs).each do |message| %>
+      <% form.object.errors.full_messages_for(:docs).each do |message| %>
         <div class="error"><%= message %></div>
       <% end %>
     </div>
@@ -88,7 +77,7 @@
       <div class="my-1">
         <div class="form-label fw-bold"><%= form.label :status %></div>
         <%= form.select :status, %w[applied test interview1 interview2 interview3 hired], selected: 'applied', required: true %>
-        <% candidate.errors.full_messages_for(:status).each do |message| %>
+        <% form.object.errors.full_messages_for(:status).each do |message| %>
           <div class="error"><%= message %></div>
         <% end %>
       </div>
@@ -96,12 +85,11 @@
       <div class="my-1">
         <div class="form-label fw-bold"><%= form.label :status %></div>
         <%= form.select :status,['applied'] , selected: 'applied', required: true %>
-        <% candidate.errors.full_messages_for(:status).each do |message| %>
+        <% form.object.errors.full_messages_for(:status).each do |message| %>
           <div class="error"><%= message %></div>
         <% end %>
       </div>
     <% end %>
-
 
     <button class="my-3 btn btn-primary">
       <%= form.submit :class => "btn" %>

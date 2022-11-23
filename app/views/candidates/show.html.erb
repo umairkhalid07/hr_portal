@@ -48,8 +48,8 @@
 
       <br>
       <div class="text-center my-3">
-        <%= link_to "Edit Candidate", edit_candidate_path(@candidate), :class => "link-alt" %>
-        <%= link_to "Delete Candidate", @candidate, :class => "link-alt", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <%= link_to "Edit Candidate", edit_position_candidate_path(@position.id, @candidate.id), :class => "link-alt" %>
+        <%= link_to "Delete Candidate", [@candidate.position, @candidate], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, :class => "link-alt" %>
       </div>
     </div>
   </div>

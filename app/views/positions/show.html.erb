@@ -6,25 +6,37 @@
   <p class="lead"> <strong>Start Date: </strong><%= @position.date_starts_at.strftime("%d/%m/%Y") %></p>
   <p class="lead"> <strong>End Date: </strong><%= @position.date_ends_at.strftime("%d/%m/%Y") %></p>
   <p class="lead"> <strong>Available Openings: </strong><%= @position.number_of_positions %></p>
+  <hr>
   <a class=""><%= link_to "Edit Position Details", edit_position_path(@position), :class => "link-alt" %></a>
   <a class=""><%= link_to "Delete Position", position_path(@position), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, :class => "link-alt" %></a>
-</div> <hr>
+</div>
+
+<hr>
 
 <div class="mx-5">
-  <h3>Candidates</h3><hr>
+  <div class="container mx-0 border-0">
+    <div class="row">
+      <div class="col-2">
+        <h3 class="me-5">Candidates:  </h3>
+      </div>
+      <div class="col-10">
+        <div class="me-5"><%= link_to "New Candidate",   new_position_candidate_path(@position), :class => "link-alt" %></div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
   <div class="mx-auto">
     <% @position.candidates.each do |candidate| %>
       <div class="card mx-5 my-3 p-2 d-inline-flex h-100" style="display: inline-block; width: 40%;">
         <div class="card-body">
-          <h5 class="card-title"><%= link_to candidate.name, candidate %></h5>
+          <h5 class="card-title"><%= link_to candidate.name, position_candidate_path(@position, candidate) %></h5>
           <p class="card-text"><strong>Email: </strong><%= candidate.email %></p>
           <p class="card-text"><strong>Phone Number: </strong><%= candidate.phone_number %></p>
           <p class="card-text"><strong>University: </strong><%= candidate.university %></p>
           <p class="card-text"><strong>GPA: </strong><%= candidate.gpa %></p>
-          <p class="card-text"><strong>Bio: </strong><%= candidate.bio %></p>
           <p class="card-text"><strong>Status: </strong><%= candidate.status %></p>
-          <%= link_to "Edit Candidate", edit_candidate_path(candidate), :class => "link-alt" %>
-          <%= link_to "Delete Candidate", candidate, :class => "link-alt", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         </div>
       </div>
     <% end %>
