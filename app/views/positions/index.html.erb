@@ -1,18 +1,19 @@
-<div class="mb-5"><%= render "positions/nav1" %></div>
+<div class="mb-5"><%= render "positions/header" %></div>
 <h1 class="display-5 text-center mb-5">Current Job Positions</h1>
 
-<div class="justify-content-between">
+<div class="d-block mx-auto">
   <% @positions.each do |position| %>
-    <div class="card mx-5 my-3 p-2" style="display: inline-block; width: 40%;">
+    <div class="card mx-5 my-3 p-2 d-inline-flex h-100" style="width: 43%;">
       <div class="card-body">
         <% if position.logo.attached? %>
           <% puts "==================== LOGO IS ATTACHED ====================" %>
-          <div><%= image_tag position.logo, width: "20%", height: "10%" %></div>
+          <div class="p-3"><%= image_tag position.logo, width: "15%", height: "7%" %></div>
         <% end %>
         <h5 class="card-title"><%= link_to position.name, position %></h5>
         <p class="card-text"><%= position.description %></p>
-        <p class="card-text fw-bold">Deadline: <%= position.deadline.strftime("%d/%m/%Y") %></p>
-        <p class="card-subtitle fw-bold">Positions: <%= position.available %></p>
+        <p class="card-text fw-bold">Start Date: <%= position.date_starts_at.strftime("%d/%m/%Y") %></p>
+        <p class="card-text fw-bold">End Date: <%= position.date_ends_at.strftime("%d/%m/%Y") %></p>
+        <p class="card-subtitle fw-bold">Positions: <%= position.number_of_positions %></p>
       </div>
     </div>
   <% end %>

@@ -1,4 +1,4 @@
-<div class="mb-5"><%= render "positions/nav1" %></div>
+<div class="mb-5"><%= render "positions/header" %></div>
 <h1 class="display-5 text-center m-3">Candidate Details</h1>
 
 <div class="mx-auto">
@@ -15,20 +15,20 @@
       <div class="card text-center p-2 candidate-info">
         <div class="card-body">
           <h3 class="card-text"><strong>Email: </strong><%= @candidate.email %></h3>
-          <h3 class="card-text"><strong>Phone Number: </strong><%= @candidate.phone %></h3>
+          <h3 class="card-text"><strong>Phone Number: </strong><%= @candidate.phone_number %></h3>
           <h3 class="card-text"><strong>University: </strong><%= @candidate.university %></h3>
           <h3 class="card-text"><strong>GPA: </strong><%= @candidate.gpa %></h3>
-          <h3 class="card-text"><strong>Bio: </strong><%= @candidate.bio %></h3>
           <h3 class="card-text"><strong>Status: </strong><%= @candidate.status %></h3>
+          <h3 class="card-text text-start"><strong>Bio: </strong><%= @candidate.bio %></h3>
         </div>
       </div>
 
-      <div class="container add-border p-3">
+      <div class="container add-border p-5">
         <div class="row">
           <div class="col-3">
-            <% if @candidate.picture.attached? %>
+            <% if @candidate.cv.attached? %>
               <% puts "==================== CV IS ATTACHED ====================" %>
-              <%= image_tag @candidate.cv, :class => "add-border" %>
+              <%= image_tag @candidate.cv, width: "100%", height: "100%", :class => "add-border" %>
               <%= link_to 'View CV', rails_blob_path(@candidate.cv, disposition: "preview", :class => "link-alt") %>
             <% end %>
           </div>
@@ -38,7 +38,7 @@
               <div>
                 <% @candidate.docs.each do |doc| %>
                   <%= image_tag doc, :class => "add-border" %>
-                  <%= link_to 'View Docs', rails_blob_path(doc, disposition: "preview", :class => "link-alt") %>
+                  <%= link_to 'View Doc', rails_blob_path(doc, disposition: "preview", :class => "link-alt") %>
                 <% end %>
               </div>
             <% end %>

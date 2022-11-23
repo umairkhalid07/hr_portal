@@ -1,14 +1,11 @@
 class PositionsController < ApplicationController
-  def home
-
-  end
+  before_action :set_position, only: [:show, :edit, :update, :destroy]
 
   def index
     @positions = Position.all
   end
 
   def show
-    @position = Position.find(params[:id])
   end
 
   def new
@@ -17,8 +14,6 @@ class PositionsController < ApplicationController
 
   def create
     @position = Position.new(position_params)
-    session[:position_id] = @position.id
-    @position.logo.attach(position_params[:logo])
     if @position.save
       redirect_to @position
     else
@@ -27,12 +22,9 @@ class PositionsController < ApplicationController
   end
 
   def edit
-    @position = Position.find(params[:id])
   end
 
   def update
-    @position = Position.find(params[:id])
-    @position.logo.attach(params[:logo])
     if @position.update(position_params)
       redirect_to @position
     else
@@ -41,13 +33,16 @@ class PositionsController < ApplicationController
   end
 
   def destroy
-    @position = Position.find(params[:id])
     @position.destroy
     redirect_to positions_path, status: :see_other
   end
 
   private
   def position_params
-    params.require(:position).permit(:name, :description, :deadline, :available, :logo)
+    params.require(:position).permit(:name, :description, :date_starts_at, :date_ends_at, :number_of_positions, :logo)
+  end
+
+  def set_position
+    @position = Position.find(params[:id])
   end
 end

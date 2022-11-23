@@ -40,24 +40,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_080108) do
   end
 
   create_table "candidates", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.integer "phone"
-    t.text "bio"
-    t.string "university"
-    t.float "gpa"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.integer "phone_number", null: false
+    t.text "bio", null: false
+    t.string "university", null: false
+    t.float "gpa", null: false
     t.integer "position_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
+    t.integer "status", null: false
     t.index ["position_id"], name: "index_candidates_on_position_id"
   end
 
   create_table "positions", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.datetime "deadline"
-    t.integer "available"
+    t.string "name", null: false
+    t.text "description", null: false
+    t.datetime "date_starts_at", null: false
+    t.datetime "date_ends_at", null: false
+    t.integer "number_of_positions", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

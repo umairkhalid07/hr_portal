@@ -6,14 +6,18 @@
   margin-right: 30px;
 }
 .link-alt {
+  padding: 8px 16px;
+  background-color: purple;
+  color: white;
   font-size: 20px;
-  color: black;
-  margin-left: 10px;
+  margin-right: 15px;
   text-decoration: none;
+  border-radius: 30px;
 }
 .error {
   padding: 2px;
   color: red;
+  font-style: italic;
 }
 .btn {
   background-color: blue;
