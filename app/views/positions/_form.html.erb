@@ -18,25 +18,25 @@
     </div>
 
     <div class="my-1">
-      <div class="form-label fw-bold"><%= form.label :date_starts_at %></div>
-      <div><%= form.date_select :date_starts_at, required: true %></div>
-      <% position.errors.full_messages_for(:date_starts_at).each do |message| %>
+      <div class="form-label fw-bold"><%= form.label :started_at %></div>
+      <div><%= form.date_select :started_at, required: true %></div>
+      <% position.errors.full_messages_for(:date_started_at).each do |message| %>
         <div class="error"><%= message %></div>
       <% end %>
     </div>
 
     <div class="my-1">
-      <div class="form-label fw-bold"><%= form.label :date_ends_at %></div>
-      <div><%= form.date_select :date_ends_at, required: true %></div>
-      <% position.errors.full_messages_for(:date_ends_at).each do |message| %>
+      <div class="form-label fw-bold"><%= form.label :ends_at %></div>
+      <div><%= form.date_select :ends_at, required: true %></div>
+      <% position.errors.full_messages_for(:ends_at).each do |message| %>
         <div class="error"><%= message %></div>
       <% end %>
     </div>
 
     <div class="my-1">
-      <div class="form-label fw-bold"><%= form.label :number_of_positions %></div>
-      <div><%= form.text_field :number_of_positions, size: "10x1", required: true  %></div>
-      <% position.errors.full_messages_for(:number_of_positions).each do |message| %>
+      <div class="form-label fw-bold"><%= form.label :vacancies %></div>
+      <div><%= form.text_field :vacancies, size: "10x1", required: true  %></div>
+      <% position.errors.full_messages_for(:vacancies).each do |message| %>
         <div class="error"><%= message %></div>
       <% end %>
     </div>

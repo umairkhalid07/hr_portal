@@ -3,9 +3,9 @@
   <div class="p-3"> <%= image_tag @position.logo, width: "10%", height: "5%" %> </div>
   <h1 class="h1"> <%= @position.name %></h1>
   <p class="lead"> <strong>Description: </strong><%= @position.description %></p>
-  <p class="lead"> <strong>Start Date: </strong><%= @position.date_starts_at.strftime("%d/%m/%Y") %></p>
-  <p class="lead"> <strong>End Date: </strong><%= @position.date_ends_at.strftime("%d/%m/%Y") %></p>
-  <p class="lead"> <strong>Available Openings: </strong><%= @position.number_of_positions %></p>
+  <p class="lead"> <strong>Start Date: </strong><%= @position.started_at.strftime("%d/%m/%Y") %></p>
+  <p class="lead"> <strong>End Date: </strong><%= @position.ends_at.strftime("%d/%m/%Y") %></p>
+  <p class="lead"> <strong>Available Openings: </strong><%= @position.vacancies %></p>
   <hr>
   <a class=""><%= link_to "Edit Position Details", edit_position_path(@position), :class => "link-alt" %></a>
   <a class=""><%= link_to "Delete Position", position_path(@position), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, :class => "link-alt" %></a>

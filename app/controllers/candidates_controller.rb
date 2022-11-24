@@ -1,16 +1,14 @@
 class CandidatesController < ApplicationController
+  before_action :set_position, only: [:show, :new, :create, :edit, :destroy]
   def show
-    @position = Position.find(params[:position_id])
-    @candidate = Candidate.find(params[:id])
+    @candidate = @position.candidates.find(params[:id])
   end
 
   def new
-    @position = Position.find(params[:position_id])
     @candidate = @position.candidates.new
   end
 
   def create
-    @position = Position.find(params[:position_id])
     @candidate = @position.candidates.create(candidate_params)
     if @candidate.save
       redirect_to position_path(@position)
@@ -20,8 +18,7 @@ class CandidatesController < ApplicationController
   end
 
   def edit
-    @position = Position.find(params[:position_id])
-    @candidate = Candidate.find(params[:id])
+    @candidate = @position.candidates.find(params[:id])
   end
 
   def update
@@ -34,7 +31,6 @@ class CandidatesController < ApplicationController
   end
 
   def destroy
-    @position = Position.find(params[:position_id])
     @candidate = @position.candidates.find(params[:id])
     @candidate.destroy!
     redirect_to position_path(@position)
@@ -42,6 +38,10 @@ class CandidatesController < ApplicationController
 
   private
   def candidate_params
-    params.require(:candidate).permit(:name, :email, :phone_number, :university, :gpa, :bio, :status, :position_id, :picture, :cv, docs: [])
+    params.require(:candidate).permit(:name, :email, :phone_number, :university, :gpa, :bio, :status, :picture, :cv, docs: [])
+  end
+
+  def set_position
+    @position = Position.find(params[:position_id])
   end
 end

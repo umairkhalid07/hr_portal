@@ -56,9 +56,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_080108) do
   create_table "positions", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.datetime "date_starts_at", null: false
-    t.datetime "date_ends_at", null: false
-    t.integer "number_of_positions", null: false
+    t.datetime "started_at", null: false
+    t.datetime "ends_at", null: false
+    t.integer "vacancies", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

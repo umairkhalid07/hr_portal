@@ -39,7 +39,7 @@ class PositionsController < ApplicationController
 
   private
   def position_params
-    params.require(:position).permit(:name, :description, :date_starts_at, :date_ends_at, :number_of_positions, :logo)
+    params.require(:position).permit(:name, :description, :started_at, :ends_at, :vacancies, :logo)
   end
 
   def set_position

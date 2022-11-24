@@ -6,14 +6,13 @@
     <div class="card mx-5 my-3 p-2 d-inline-flex h-100" style="width: 43%;">
       <div class="card-body">
         <% if position.logo.attached? %>
-          <% puts "==================== LOGO IS ATTACHED ====================" %>
           <div class="p-3"><%= image_tag position.logo, width: "15%", height: "7%" %></div>
         <% end %>
         <h5 class="card-title"><%= link_to position.name, position %></h5>
         <p class="card-text"><%= position.description %></p>
-        <p class="card-text fw-bold">Start Date: <%= position.date_starts_at.strftime("%d/%m/%Y") %></p>
-        <p class="card-text fw-bold">End Date: <%= position.date_ends_at.strftime("%d/%m/%Y") %></p>
-        <p class="card-subtitle fw-bold">Positions: <%= position.number_of_positions %></p>
+        <p class="card-text fw-bold">Start Date: <%= position.started_at.strftime("%d/%m/%Y") %></p>
+        <p class="card-text fw-bold">End Date: <%= position.ends_at.strftime("%d/%m/%Y") %></p>
+        <p class="card-subtitle fw-bold">Positions: <%= position.vacancies %></p>
       </div>
     </div>
   <% end %>
